@@ -1,0 +1,619 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+:root{
+    
+    --primary:#011A27;
+    --secondary:#F0810F;
+    --white:rgb(241, 238, 238);
+    --col1:#063852;
+    --col2:#E6DF44;
+    --transparent-bg:#011a27d2;
+    --transparent-bg2:#03111ae0;
+    --dark: rgb(43, 38, 38);
+    --dark2: #03111a;
+    --shadow-dark: #01080c;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    color: var(--white);
+    font-family:'Poppins', sans-serif;
+}
+main{
+    min-width: 400px;
+}
+/*NavBar Section */
+nav{
+    background-color: var(--transparent-bg);
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    width: 100vw;
+    min-width: 400px;
+}
+.nav-left{
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--secondary);
+    font-style: italic;
+    text-shadow: 2px 2px 4px var(--col2);
+}
+.nav-right li{
+    display: inline-flex;
+    padding-right: 1rem;
+}
+.nav-right a{
+    text-decoration: none;
+    color: var(--white);
+    transition: 0.3s;
+}
+.nav-right a:hover{
+    color: var(--col2);
+    transform: scale(1.1);
+}
+.active a{
+    color: var(--secondary);
+    text-decoration: underline;
+}
+.menu-icon-holder{
+    margin-right: 2rem;
+    transition: 0.5s;
+}
+.menu-icon-holder i{
+    display: none;
+    font-size: 1.8rem;
+}
+.menu-dropdown{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    background: var(--transparent-bg2);
+    max-height: 100vh;
+    height: 100%;
+    width: 300px;
+    padding-top: 3rem;
+    overflow: hidden;
+    animation: slide-in 1.5s;
+    overflow-y: scroll;
+}
+@keyframes slide-in {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 300px;
+    }
+}
+.slide-menu-out{
+    animation: slide-out 1.5s;
+}
+@keyframes slide-out {
+    0%{
+        width: 300px;
+    }
+    100%{
+        width: 0px;
+    }
+}
+
+.menu-dropdown ul{
+    list-style: none;
+}
+.menu-dropdown li{
+    border-bottom: 2px solid var(--col1) ;
+    width: 100%;
+    padding: 1rem 2rem;
+    transition: 0.5s;
+    
+}
+.menu-dropdown li:hover{
+    background-color: var(--transparent-bg);
+    transform: scale(1.05);
+}
+.menu-dropdown a{
+    font-size: 1.3rem;
+    color: var(--white);
+    text-decoration: none;
+    border: none;
+}
+.menu-dropdown a:hover{
+    color: var(--col2);
+    transform: scale(1.1);
+}
+
+@media (max-width:850px){
+    .menu-icon-holder i{
+        display: contents;
+    }
+    .nav-right ul{
+        display: none;
+    }
+
+}
+
+/* End of Navbar section*/
+
+
+/* HomePage Section*/
+.home-container{
+    background-image: url("../assets/imgs/bg1.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+.home{
+    background-color: var(--transparent-bg);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+.home-text{
+    max-width: 700px;
+}
+.home-text h1{
+    transition: 0.5s;
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+.home-text h1 span{
+    color: var(--secondary);
+}
+.home-text p{
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+.home-text a{
+    text-decoration: none;
+}
+.home-text a div{
+    max-width: 12rem;
+    background-color: var(--secondary);
+    border: 1px solid var(--white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    color: var(--dark);
+    font-weight: 500;
+    display: inline-flex;
+    justify-self: center;
+    transition: 0.5s;
+}
+.home-text a div:hover{
+    transform: scale(1.05);
+    background-color: var(--col2);
+}
+@media (max-width: 500px){
+    .home-text h1{
+        font-size: 2.5rem;
+    }
+    .home-text a div{
+        transform: scale(0.8);
+    }
+}
+/* End Of Home Section*/
+
+
+/* AboutPage Section*/
+.about{   
+    min-height: 100vh;
+    padding: 5rem 3rem;
+    background-color: var(--primary);
+}
+.about-content-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.about-content{
+    width: 50vw;
+    min-width: 300px;
+    width: 40vw;
+    text-align: center;
+    font-style: italic;
+}
+.about-content p{
+    margin-bottom: 1rem;
+}
+.about-content {
+    width: 200px;   
+}
+.about-items{
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    min-width: 300px;
+    justify-content: space-evenly;
+    margin: 1rem;
+    transition: 0.5s;   
+}
+.about-item{
+    width: 220px;
+    margin: 0.5rem 0.4rem;
+    height: 270px;
+    border: 1px solid var(--dark);
+    color: var(--secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px var(--dark2);
+    transition: 0.5s;
+}
+@media (max-width:1060px){
+    .about-item{
+        width: 180px;
+    }
+    .about-items{
+        width: 400px;
+    }
+}
+.about-txt-lg{
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+.about-txt-sm{
+    font-size: 1.2rem;
+    color: var(--white);
+}
+.about-item:hover{
+    border: 1px solid var(--secondary);
+    transform: scale(1.02);
+    position: relative;
+    box-shadow: 0px 5px 10px var(--shadow-dark);
+}
+
+/* Skills section*/
+.skillsContainer{
+    margin-top: 4rem;
+}
+.skillsContainer h2{
+    text-align: center;
+}
+.skills{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.skill{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.skill div img{
+    width: 50px;
+    height: auto;
+    transition: 0.5s;
+}
+@media (max-width:600px){
+    .skill div img{
+        width: 70px;
+    }
+}
+.skill div img:hover{
+    transform: scale(1.1);
+}
+
+.skill div div{
+    text-align: center;
+}
+.progress{
+    height: 0.5rem;
+    width: 100%;
+    border: 1px solid var(--secondary);
+    max-width: 400px;
+    width: 60vw;
+    min-width: 100px;
+}
+
+.progress-txt{
+    position: relative;
+    top:-30px ;
+    
+}
+
+.progress-bar{
+    height: 0.4rem;
+    background-color: #F0810F;
+    animation: slide-in 2s;
+    position: relative;
+    top: -25px;
+}
+/* End Of Skill Section*/
+/* Skill Animation*/
+.python .progress-bar{width:20% ; animation: python 2s;}
+.html .progress-bar{width: 60%; animation: html 2s;}
+.css .progress-bar{width: 65%; animation: css 2s;}
+.js .progress-bar{width: 70%; animation: js 2s;}
+.node .progress-bar{width: 30%; animation: node 2s;}
+
+
+
+@keyframes python {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width:20%;
+    }
+}
+@keyframes css {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 65%;
+    }
+}
+@keyframes html {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 60%;
+    }
+}
+@keyframes js {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 70%;
+    }
+}
+@keyframes node {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 30%;
+    }
+}
+/* End Of Skill Animation*/
+/* End Of About Section*/
+.projects-section{
+    position: relative;
+    height: auto;
+    padding: 5rem 3rem;
+    background-color: var(--col1);
+}
+
+.projects-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    transition: 0.5s;
+}
+.project-tile{
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    min-width: 250px;
+    margin: 1rem 0.5rem;
+    box-shadow: 0px 7px 15px var(--shadow-dark);
+}
+.project-content{
+    overflow: hidden;
+}
+.project-image-container{
+    display: flex;
+    justify-content: center;
+}
+/* Make the shadow of the projectname show on the project image*/
+.project-image-container img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.project-name{
+    position: relative;
+    background-color: var(--primary);
+    text-align: center;
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 0px -3px 15px var(--shadow-dark);
+
+}
+.onProjectHover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: var(--transparent-bg2);
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+.onProjectHover p{
+    font-size: 1.8rem;
+    font-weight:500 ;
+}
+.onProjectHover i{
+    font-size: 4rem;
+    margin: 1.5rem;
+    border-radius: 20%;
+    color: var(--white);
+    transition: 0.5s;
+    
+}
+.project-tile .onProjectHover:hover{
+    transform: scale(1);
+    opacity: 1;
+}
+.onProjectHover i:hover{
+    color: var(--secondary);
+    
+}
+.project-button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.project-button-container button{
+    position: relative;
+    margin: 3rem;
+    width: 200px;
+    text-align: center;
+}
+
+
+.contact-section{
+    background-color: var(--primary);
+    height: auto;
+    padding: 5rem 3rem;
+}
+
+.contact-content{
+    display: flex;
+    justify-content: space-evenly;
+    transition: 0.5s;
+}
+.contact-me{
+    max-width: 500px;
+    width: 100%;
+    min-width: 300px;
+    margin: 0.5rem;
+}
+.contact-me h2{
+    text-align: center;
+}
+.contact-me hr{
+    width: 150px;
+    margin: auto;
+    margin-top: 0.3rem;
+}
+.contact-me ul{
+    list-style: none;
+}
+.contact-me li{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0.5rem;
+    font-size: 1.2rem;
+}
+.contact-me li i{
+    font-size: 1.5rem;
+    margin: 0.5rem 1rem;
+}
+.div1{
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+.send-a-message{
+    max-width: 600px;
+    width: 100%;
+    min-width: 300px;
+    margin: 0.5rem;
+}
+.send-a-message h2{
+    text-align: center;
+}
+.send-a-message hr{
+    width: 150px;
+    margin: auto;
+    margin-top: 0.3rem;
+}
+.send-a-message form{
+    display: flex;
+    flex-direction: column;
+}
+.send-a-message form label{
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+.forminput{
+    background-color: var(--col1);
+    border: none;
+    width: 100%;
+    height: 2rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    color: var(--white);
+}
+.forminput:focus{
+    outline: none;
+    border: 1px solid var(--col2);
+}
+
+.send-a-message form textarea{
+    height: 150px;
+    
+    
+}
+.send-a-message form button{
+    width: 150px;
+    font-weight: 500;
+    margin-top: 1rem;
+    align-self: flex-end;
+}
+
+@media(max-width:850px){
+    .contact-content{
+        display: block;
+        justify-content: space-evenly;
+        
+    }   
+}
+
+
+
+
+/*Independent classes to be re-used*/
+.header{
+    border: none;
+    border-left: 4px solid var(--secondary);
+    padding-left: 1rem ;
+    margin-bottom:2rem ;
+}
+.line{
+    width: 30px;
+    height: 3px;
+    background-color: var(--dark);
+    display: inline-flex;
+    margin: 0.3rem;
+}
+button{
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    border: 1px solid var(--primary);
+    background-color: var(--secondary);
+    color: var(--primary);
+    border-radius: 5px;
+    transition: 0.7s;
+}
+button:hover{
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-color: var(--secondary);   
+    transform: scale(1.01);
+}
+hr{
+    border: 1px solid var(--secondary);
+    margin: 0px 2rem;
+}
+/*dynamic classes*/
+.hidden{
+    display: none;
+}
+.rotate{
+    transform: rotate(90deg);
+}
